@@ -1,0 +1,35 @@
+{
+  "name": "gpt-chatbot",
+  "version": "1.0.0",
+  "description": "a chatbot using gpt built by gpt lol",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "client": "cd client && npm start",
+    "server": "nodemon server.js",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "contributors": [
+    {
+      "name": "IllegalRadish",
+      "url": "https://github.com/illegalRadish"
+    },
+    {
+      "name": "miniponz",
+      "url": "https://github.com/miniponz"
+    }
+  ],
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "openai": "^4.47.3",
+    "path": "^0.12.7",
+    "serve-static": "^1.15.0"
+  }
+}

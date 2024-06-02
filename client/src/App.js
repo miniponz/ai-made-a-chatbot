@@ -9,12 +9,12 @@ function App() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const newMessage = { user: 'Student', text: message };
+    const newMessage = { user: 'User', text: message };
     setChat([...chat, newMessage]);
 
     try {
       const response = await axios.post(`${process.env.REACT_APP_API_BASE_URL}/api/chat`, { message });
-      const teacherReply = { user: 'Teacher', text: response.data.reply };
+      const teacherReply = { user: 'Mr. Mateski', text: response.data.reply };
       setChat([...chat, newMessage, teacherReply]);
     } catch (error) {
       console.error('Error fetching response:', error);
@@ -25,7 +25,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Its A Chatbot</h1>
+      <h1>Mr. Mateski Chatbot</h1>
       <div className="chatbox">
         {chat.map((msg, index) => (
           <div key={index} className={`message ${msg.user.toLowerCase()}`}>

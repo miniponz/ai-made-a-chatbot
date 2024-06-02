@@ -13,7 +13,7 @@ function App() {
     setChat([...chat, newMessage]);
 
     try {
-      const response = await axios.post('http://localhost:8080/api/chat', { message });
+      const response = await axios.post(`${process.env.REACT_APP_API_BASE_URL}/api/chat`, { message });
       const teacherReply = { user: 'Teacher', text: response.data.reply };
       setChat([...chat, newMessage, teacherReply]);
     } catch (error) {
